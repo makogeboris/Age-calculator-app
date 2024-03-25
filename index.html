@@ -34,8 +34,10 @@
               name="day"
               placeholder="DD"
               required
+              aria-describedby="error-message-day"
             />
             <p
+              aria-live="polite"
               class="error-valid-date error-message-empty error-message-day"
             ></p>
           </div>
@@ -48,8 +50,12 @@
               name="month"
               placeholder="MM"
               required
+              aria-describedby="error-message-month"
             />
-            <p class="error-message-empty error-message-month"></p>
+            <p
+              aria-live="polite"
+              class="error-message-empty error-message-month"
+            ></p>
           </div>
 
           <div class="form-row">
@@ -60,14 +66,20 @@
               name="year"
               placeholder="YYYY"
               required
+              aria-describedby="error-message-year"
             />
-            <p class="error-message-empty error-message-year"></p>
+            <p
+              aria-live="polite"
+              class="error-message-empty error-message-year"
+            ></p>
           </div>
         </div>
 
         <div class="line"></div>
         <button type="submit">
           <svg
+            aria-hidden="true"
+            focusable="false"
             xmlns="http://www.w3.org/2000/svg"
             width="46"
             height="44"
