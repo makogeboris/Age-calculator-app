@@ -89,6 +89,7 @@ submitForm.addEventListener("submit", function (event) {
     return;
   }
 
+  // Calculating age
   const day = parseInt(dayElement.value);
   const month = parseInt(monthElement.value);
   const year = parseInt(yearElement.value);
@@ -120,4 +121,14 @@ submitForm.addEventListener("submit", function (event) {
   monthsOutput.classList.add("animate__animated", "animate__bounceIn");
   daysOutput.textContent = ageInDays;
   daysOutput.classList.add("animate__animated", "animate__bounceIn");
+});
+
+// Removing error messages and styles on focus
+const inputFields = submitForm.querySelectorAll("input");
+inputFields.forEach((field) => {
+  field.addEventListener("focus", function () {
+    this.style.borderColor = "hsl(259, 100%, 65%)";
+    field.parentElement.querySelector("label").style.color = "hsl(0, 1%, 44%)";
+    field.parentElement.querySelector(".error-message-empty").textContent = "";
+  });
 });
