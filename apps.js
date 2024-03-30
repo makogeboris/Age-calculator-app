@@ -1,27 +1,105 @@
 "use strict";
 
-document.getElementById("dateForm").addEventListener("submit", caclAge);
+const submitForm = document.getElementById("dateForm");
 
-function caclAge(event) {
+let yearsOutput = document.getElementById("yearsOutput");
+let monthsOutput = document.getElementById("monthsOutput");
+let daysOutput = document.getElementById("daysOutput");
+
+let isValid = false;
+let dayElement = document.getElementById("day");
+let monthElement = document.getElementById("month");
+let yearElement = document.getElementById("year");
+
+const inputDay = dayElement;
+const inputMonth = monthElement;
+const inputYear = yearElement;
+
+const labelDay = document.querySelector(`label[for="${dayElement.id}"]`);
+const labelMonth = document.querySelector(`label[for="${monthElement.id}"]`);
+const labelYear = document.querySelector(`label[for="${yearElement.id}"]`);
+
+const errorDay = document.querySelector(".error-message-day");
+const errorMonth = document.querySelector(".error-message-month");
+const errorYear = document.querySelector(".error-message-year");
+
+submitForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  let yearsOutput = document.getElementById("yearsOutput");
-  let monthsOutput = document.getElementById("monthsOutput");
-  let daysOutput = document.getElementById("daysOutput");
+  let isFormValid = true;
 
-  const day = parseInt(document.getElementById("day").value);
-  const month = parseInt(document.getElementById("month").value);
-  const year = parseInt(document.getElementById("year").value);
+  // Check day input
+  if (!dayElement.value) {
+    errorDay.textContent = "This field is required";
+    inputDay.style.borderColor = "hsl(0, 100%, 67%)";
+    labelDay.style.color = "hsl(0, 100%, 67%)";
+    isFormValid = false;
+  } else if (+dayElement.value > 31 || +dayElement.value < 1) {
+    errorDay.textContent = "Must be a valid day";
+    inputDay.style.borderColor = "hsl(0, 100%, 67%)";
+    labelDay.style.color = "hsl(0, 100%, 67%)";
+    isFormValid = false;
+  } else {
+    errorDay.textContent = "";
+    inputDay.style.borderColor = "hsl(0, 0%, 86%)";
+    labelDay.style.color = "hsl(0, 1%, 44%)";
+    isValid = true;
+  }
+
+  // Check month input
+  if (!monthElement.value) {
+    errorMonth.textContent = "This field is required";
+    inputMonth.style.borderColor = "hsl(0, 100%, 67%)";
+    labelMonth.style.color = "hsl(0, 100%, 67%)";
+    isFormValid = false;
+  } else if (+monthElement.value > 12 || +monthElement.value < 1) {
+    errorMonth.textContent = "Must be a valid month";
+    inputMonth.style.borderColor = "hsl(0, 100%, 67%)";
+    labelMonth.style.color = "hsl(0, 100%, 67%)";
+    isFormValid = false;
+  } else {
+    errorMonth.textContent = "";
+    inputMonth.style.borderColor = "hsl(0, 0%, 86%)";
+    labelMonth.style.color = "hsl(0, 1%, 44%)";
+    isValid = true;
+  }
+
+  // Check year input
+  if (!yearElement.value) {
+    errorYear.textContent = "This field is required";
+    inputYear.style.borderColor = "hsl(0, 100%, 67%)";
+    labelYear.style.color = "hsl(0, 100%, 67%)";
+    isFormValid = false;
+  } else {
+    const currentYear = new Date().getFullYear();
+    if (+yearElement.value > currentYear) {
+      errorYear.textContent = "Must be in the past";
+      inputYear.style.borderColor = "hsl(0, 100%, 67%)";
+      labelYear.style.color = "hsl(0, 100%, 67%)";
+      isFormValid = false;
+    } else {
+      errorYear.textContent = "";
+      inputYear.style.borderColor = "hsl(0, 0%, 86%)";
+      labelYear.style.color = "hsl(0, 1%, 44%)";
+      isValid = true;
+    }
+  }
+
+  if (!isFormValid) {
+    return;
+  }
+
+  const day = parseInt(dayElement.value);
+  const month = parseInt(monthElement.value);
+  const year = parseInt(yearElement.value);
 
   const birthDate = new Date(year, month - 1, day);
-
   const currentDate = new Date();
 
   let ageInYears = currentDate.getFullYear() - birthDate.getFullYear();
   let ageInMonths = currentDate.getMonth() - birthDate.getMonth();
   let ageInDays = currentDate.getDate() - birthDate.getDate();
 
-  // Adjust for negative ageInMonths or ageInDays
   if (ageInDays < 0) {
     ageInMonths--;
     ageInDays += new Date(
@@ -39,72 +117,4 @@ function caclAge(event) {
   yearsOutput.textContent = ageInYears;
   monthsOutput.textContent = ageInMonths;
   daysOutput.textContent = ageInDays;
-}
-
-//////////////////////////////////////////////////////////////
-
-/* const day = parseInt(document.getElementById("day").value);
-//   const month = parseInt(document.getElementById("month").value);
-//   const year = parseInt(document.getElementById("year").value);
-
-//   if (!validateInput(day, month, year)) {
-//     return;
-//   }
-
-// function setErrorStyles(input, isError) {
-//   const formContainers = document.querySelectorAll(".form-row");
-//   formContainers.forEach((formContainer) => {
-//     const inputElement = formContainer.querySelector("input");
-//     const label = formContainer.querySelector("label");
-//     const noInput = formContainer.querySelector(".error-message-empty");
-
-//     if (inputElement.id === input) {
-//       if (isError) {
-//         noInput.textContent = "This field is required";
-//         inputElement.style.borderColor = "hsl(0, 100%, 67%)";
-//         label.style.color = "hsl(0, 100%, 67%)";
-//       } else {
-//         noInput.textContent = "";
-//         inputElement.style.borderColor = "hsl(0, 0%, 86%)";
-//         label.style.color = "hsl(0, 1%, 44%)";
-//       }
-//     }
-//   });
-// }
-
-// function resetErrorStyles() {
-//   setErrorStyles("day", false);
-//   setErrorStyles("month", false);
-//   setErrorStyles("year", false);
-// }
-
-// //////////////////////////////////////////
-// Check if day is between 1 and 31
-// if (isNaN(day) || day < 1 || day > 31) {
-//   document.querySelector(".error-message-day").textContent =
-//     "Must be a valid day";
-//   // return false;
-// }
-
-// // Check if month is between 1 and 12
-// if (isNaN(month) || month < 1 || month > 12) {
-//   document.querySelector(".error-message-month").textContent =
-//     "Must be a valid month";
-//   // return false;
-// }
-
-// const currentDate = new Date();
-// const inputDate = new Date(+year, +month - 1, +day);
-// if (inputDate > currentDate) {
-//   console.log("Error: Must be in the past");
-
-//   document.querySelector(".error-message-year").textContent =
-//     "Must be in the past";
-
-// // Check if the date is valid
-// if (isNaN(inputDate.getTime())) {
-//   document.querySelector(".error-valid-date").textContent =
-//     "Must be a valid date";
-//   return false;
-// }
-//  */
+});
