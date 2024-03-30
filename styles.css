@@ -190,18 +190,6 @@ input:focus {
   outline: none;
 }
 
-input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button {
-  -webkit-appearance: none; /* WebKit/Blink browsers */
-  margin: 0; /* Remove margin */
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none; /* WebKit/Blink browsers */
-  margin: 0; /* Remove margin */
-}
-
 .error-valid-date,
 .error-message-empty,
 .error-message-day,
