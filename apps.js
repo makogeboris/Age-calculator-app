@@ -115,6 +115,9 @@ submitForm.addEventListener("submit", function (event) {
   }
 
   yearsOutput.textContent = ageInYears;
+  yearsOutput.classList.add("animate__animated", "animate__bounceIn");
   monthsOutput.textContent = ageInMonths;
+  monthsOutput.classList.add("animate__animated", "animate__bounceIn");
   daysOutput.textContent = ageInDays;
+  daysOutput.classList.add("animate__animated", "animate__bounceIn");
 });
