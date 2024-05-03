@@ -48,11 +48,15 @@ Users should be able to:
 
 ### What I learned
 
+I learnedabout the built-in Date object and implementing it to calculate the age accurately.
+
 ### Continued development
+
+Next time I will try practicing using a date library to get the outcome.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) 
+- [Javascript.info Date and time](https://javascript.info/date) 
 
 ## Author
 
