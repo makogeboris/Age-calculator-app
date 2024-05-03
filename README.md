@@ -48,7 +48,7 @@ Users should be able to:
 
 ### What I learned
 
-I learnedabout the built-in Date object and implementing it to calculate the age accurately.
+I learned about the javascript built-in Date object and implementing it to calculate the age accurately.
 
 ### Continued development
 
