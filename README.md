@@ -1,17 +1,13 @@
 # Frontend Mentor - Age calculator app solution
 
-This is a solution to the [Age calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
-
 ## Table of contents
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-  - [Continued development](#continued-development)
+  - [Built with](#built-with)
 - [Author](#author)
-
-
 
 ## Overview
 
@@ -23,18 +19,18 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Submit their email address using an `input` field
 - Receive an error message when the `form` is submitted if:
-- The `input` field is empty. The message for this error should say *"Whoops! It looks like you forgot to add your email"*
-- The email address is not formatted correctly (i.e. a correct email address should have this structure: `name@host.tld`). The message for this error should say *"Please provide a valid email address"*
+- The `input` field is empty. The message for this error should say _"Whoops! It looks like you forgot to add your email"_
+- The email address is not formatted correctly (i.e. a correct email address should have this structure: `name@host.tld`). The message for this error should say _"Please provide a valid email address"_
 
 ### Screenshot
 
-![](/design/desktop-completed.jpg)
+![](/design/desktop-preview.jpg)
 
 ### Links
 
-- Solution URL: https://github.com/mkboris/age-calculator-app
-- Live Site URL: https://age-calculator-app-theta-nine.vercel.app/
-- 
+- [Solution](https://github.com/mkboris/age-calculator-app)
+- [Live Site](https://age-calculator-app-theta-nine.vercel.app/)
+
 ### Built with
 
 - Semantic HTML5 markup
@@ -42,11 +38,6 @@ Users should be able to:
 - Flexbox
 - Mobile-first workflow
 
-### Continued development
-
-Building more projects to improve my skills.
-
 ## Author
 
 - Frontend Mentor - [@mkboris](https://www.frontendmentor.io/profile/mkboris)
-
