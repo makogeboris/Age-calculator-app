@@ -7,6 +7,8 @@
   - [Screenshot](#screenshot)
   - [Links](#links)
   - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
@@ -42,6 +44,15 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
+- Animate.css
+
+### What I learned
+
+Learned about the `Date` object and implementing it to calculate the age accurately. I faced some difficulties getting the logic right with getting the age in months and days, but I did some research and got it right. I wasn't able to implement the logic if the user inputs an invalid date e.g. 31/04/1991 (there are 30 days in April).
+
+### Continued development
+
+Working with dates and time can be tricky next time I will practice using a date library to get the outcome.
 
 ## Author
 
