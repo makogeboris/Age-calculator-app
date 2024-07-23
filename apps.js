@@ -115,9 +115,26 @@ submitForm.addEventListener("submit", function (event) {
     ageInMonths += 12;
   }
 
-  yearsOutput.textContent = ageInYears;
-  monthsOutput.textContent = ageInMonths;
-  daysOutput.textContent = ageInDays;
+  yearsOutput.textContent = gsap.to("#yearsOutput", {
+    duration: 2,
+    innerHTML: ageInYears,
+    ease: "power2.out",
+    snap: { innerHTML: 1 },
+  });
+
+  monthsOutput.textContent = gsap.to("#monthsOutput", {
+    duration: 2,
+    innerHTML: ageInMonths,
+    ease: "power2.out",
+    snap: { innerHTML: 1 },
+  });
+
+  daysOutput.textContent = gsap.to("#daysOutput", {
+    duration: 2,
+    innerHTML: ageInDays,
+    ease: "power2.out",
+    snap: { innerHTML: 1 },
+  });
 });
 
 // Removing error messages and styles on focus
