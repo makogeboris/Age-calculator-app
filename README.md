@@ -44,7 +44,6 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
-- Animate.css
 
 ### What I learned
 
