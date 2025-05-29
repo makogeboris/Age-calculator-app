@@ -34,7 +34,6 @@ Users should be able to:
 
 ### Links
 
-- [Solution](https://github.com/mkboris/age-calculator-app)
 - [Live Site](https://age-calculator-app-theta-nine.vercel.app/)
 
 ### Built with
@@ -55,4 +54,5 @@ Working with dates and time can be tricky next time I will practice using a date
 
 ## Author
 
-- Frontend Mentor - [@mkboris](https://www.frontendmentor.io/profile/mkboris)
+- Frontend Mentor - [makogeboris](https://www.frontendmentor.io/profile/makogeboris)
+- Twitter - [makogeboris](https://x.com/makogeboris)
